@@ -9,6 +9,7 @@ public class Fish {
 	// position of the fish
 	int x;
 	int y;
+	bolean Facing left
 	//construct a fish at a position with color
 
 	public static void main(String[] args) {
