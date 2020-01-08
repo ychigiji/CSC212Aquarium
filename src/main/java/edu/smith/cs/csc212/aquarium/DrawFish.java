@@ -45,7 +45,13 @@ public class DrawFish {
 		g.setColor(Color.black);
 		g.draw(tail);
 	}
-
+	public static void shark(Graphics2D g, Color color, int x, int y) {
+		Graphics2D TwiceSize = (Graphics2D) g.create();
+		TwiceSize.translate(x, y);
+		TwiceSize.scale(2, 2);
+		facingLeft(TwiceSize, color, 0, 0);
+		TwiceSize.dispose();
+		}
 	/**
 	 * This method is implemented by creating a new Graphics "world" located at x,y
 	 * that is scaled in a "backwards" X world.
@@ -96,4 +102,7 @@ public class DrawFish {
 		facingLeft(halfSize, color, 0, 0);
 		halfSize.dispose();
 	}
+	
+	
+         
 }

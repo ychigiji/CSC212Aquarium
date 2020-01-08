@@ -23,7 +23,18 @@ public class Snail {
 	 * The position of the Snail; y-coordinate.
 	 */
 	public int y;
-
+	
+	
+//	create a speed for the snail
+	public int speedY;
+	public int speedX;
+	
+	int gr = 0;
+	int bl = 255;
+	int r = 0;
+	
+	
+	
 	/**
 	 * Create a snail at (sx, sy) with position s.
 	 * 
@@ -51,6 +62,28 @@ public class Snail {
 	 */
 	public void move() {
 
+this.speedX = 4;
+this.speedY = 4;
+		if( this.x +40  >= 500) {
+			this.direction = "right";
+			this.y +=  this.speedY;
+		}
+		if (this.y + HEIGHT + 1 >= 500) {
+			this.direction = "bottom";
+			this.x -= this.speedX;
+		}
+		if (this.y <= HEIGHT + 1 ){
+			this.direction ="top";
+			this.x += this.speedX;
+		}
+		 if (this.x - 40 <=0) {
+			this.direction = "left";
+			this.y -= this.speedY;
+		}
+
+		
+		
+
 	}
 
 	/**
@@ -61,6 +94,8 @@ public class Snail {
 	public void draw(Graphics2D g) {
 		// By calling move here, if we want to move our snail, we can do so.
 		// Move gets called by draw, so whenever draw gets called.
+		
+		
 		this.move();
 
 		// By making a new Graphics2D object, we can move everything that gets drawn to
